@@ -15,11 +15,27 @@
     <header><a href="{{ '/' | prepend: site.baseurl }}">Music <span class="linkword">and the</span> Middlebrow</a></header>
     <nav>
       <ul>
-        {% assign sorted_pages = site.pages | sort:"order" %}
-        {% for other in sorted_pages %}
+        {% assign parent_pages = site.pages | where:"parent","/" | sort:"order" %}
+        {% for other in parent_pages %}
           {% if other.title %}
-            {% if other.url == page.url %}
-             <li><h1>{{ other.title }}</h1></li>
+            {% if other.url == page.url or other.url == page.parent %}
+             <li>
+               {% if other.url == page.url %}
+               <h1>{{ other.title }}</h1>
+               {% else %}
+               <h1><a href="{{ other.url | prepend: site.baseurl }}">{{ other.title }}</a></h1>
+               {% endif %}
+               <ul>
+               {% assign child_pages = site.pages | where:"parent",other.url | sort:"order" %}
+               {% for child in child_pages %}
+                 {% if child.url == page.url %}
+                   <li><h2>{{ child.title }}</h2></li>
+                 {% else %}
+                   <li><a href="{{ child.url | prepend: site.baseurl }}">{{ child.title }}</a></li>
+                 {% endif %}
+               {% endfor %}
+               </ul>
+             </li>
             {% else %}
              <li><a href="{{ other.url | prepend: site.baseurl }}">{{ other.title }}</a></li>
             {% endif %}

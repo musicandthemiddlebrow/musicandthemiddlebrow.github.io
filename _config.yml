@@ -2,5 +2,7 @@
 title: Music and the Middlebrow
 description: An interdisciplinary project bringing together scholars working on musical culture and the middlebrow.
 baseurl: ""
-
+defaults:
+  - values:
+      parent: /
 markdown: kramdown
