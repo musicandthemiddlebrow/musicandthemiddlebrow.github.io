@@ -143,8 +143,26 @@ ul li::before {
   margin-right: 1em;
 }
 
+dl dt {
+  color: #76ae34;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
+dl dd p {
+  margin: 0.2em;
+}
+
 p {
   line-height: 1.5em;
+}
+
+p.timing {
+  line-height: 1.5em;
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.8em;
+  margin-top: -0.5em;
 }
 
 a {
