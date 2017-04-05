@@ -30,12 +30,18 @@ header a {
 header a .linkword {
   color: #fa5760;
 }
+
+header a:hover {
+  text-decoration: none;
+}
+
 nav a {
   color: #444;
 }
 
 nav a:hover {
   color: #fa5760;
+  text-decoration: none;
 }
 
 nav {
@@ -149,10 +155,6 @@ dl dt {
   margin-top: 0.5em;
 }
 
-dl dd p {
-  margin: 0.2em;
-}
-
 p {
   line-height: 1.5em;
 }
@@ -165,13 +167,32 @@ p.timing {
   margin-top: -0.5em;
 }
 
+p.abstract-arrow {
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+div.abstract {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-left: -2em;
+  border-left: 1px solid #76ae34;
+  padding-left: 1em;
+  display: none;
+}
+
+div.expanded {
+  display: block;
+}
+
 a {
   text-decoration: none;
   color: #fa5760;
 }
 
 a:hover {
-  color: #76ae34;
+  text-decoration: underline;
 }
 
 .active a {
